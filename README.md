@@ -1,4 +1,7 @@
-# ServerGameLauncher
-网络游戏客户端，与ServerGameDownloadSolution配套
-![图片样例](https://github.com/BUGres/ServerGameLauncher/blob/Release/802682833f1faba36329c739a8b35168.png)
+### 下载器客户端
 
+![图片样例](https://github.com/BUGres/ServerGameLauncher/blob/Release/show.png)
+
+网络游戏客户端，与[ServerGameDownloadSolution](https://baidu.com) 配套
+
+服务器新闻，轮播图片链接处理方案将会在另一个项目中
