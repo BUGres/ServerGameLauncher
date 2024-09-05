@@ -1,0 +1,97 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resource\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resource\BG.png" />
+    <None Remove="Resource\btn_close.png" />
+    <None Remove="Resource\btn_ie.png" />
+    <None Remove="Resource\btn_minsize.png" />
+    <None Remove="Resource\btn_QQ.png" />
+    <None Remove="Resource\btn_StartButton.png" />
+    <None Remove="Resource\btn_WeChat.png" />
+    <None Remove="Resource\close.png" />
+    <None Remove="Resource\download.png" />
+    <None Remove="Resource\icon.ico" />
+    <None Remove="Resource\icon.png" />
+    <None Remove="Resource\IE.png" />
+    <None Remove="Resource\LoopBG.png" />
+    <None Remove="Resource\loopleft.png" />
+    <None Remove="Resource\loopleftright.png" />
+    <None Remove="Resource\loopright.png" />
+    <None Remove="Resource\minsize.png" />
+    <None Remove="Resource\OnLoopBasic.png" />
+    <None Remove="Resource\QQ.png" />
+    <None Remove="Resource\startA.png" />
+    <None Remove="Resource\startAB.png" />
+    <None Remove="Resource\startB.png" />
+    <None Remove="Resource\startBB.png" />
+    <None Remove="Resource\StartButton.png" />
+    <None Remove="Resource\StartDownLoadText.png" />
+    <None Remove="Resource\StartText.png" />
+    <None Remove="Resource\text_download.png" />
+    <None Remove="Resource\text_start.png" />
+    <None Remove="Resource\Turn.png" />
+    <None Remove="Resource\WeChat.png" />
+    <None Remove="Resource\轮播图.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resource\icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resource\BG.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\btn_close.png" />
+    <Resource Include="Resource\btn_ie.png" />
+    <Resource Include="Resource\btn_minsize.png" />
+    <Resource Include="Resource\btn_QQ.png" />
+    <Resource Include="Resource\btn_StartButton.png" />
+    <Resource Include="Resource\btn_WeChat.png" />
+    <Resource Include="Resource\icon.ico" />
+    <Resource Include="Resource\icon.png" />
+    <Resource Include="Resource\LoopBG.png" />
+    <Resource Include="Resource\loopleft.png" />
+    <Resource Include="Resource\loopright.png" />
+    <Resource Include="Resource\OnLoopBasic.png" />
+    <Resource Include="Resource\startA.png" />
+    <Resource Include="Resource\startAB.png" />
+    <Resource Include="Resource\startB.png" />
+    <Resource Include="Resource\startBB.png" />
+    <Resource Include="Resource\Turn.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="7z.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="FileBuild.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

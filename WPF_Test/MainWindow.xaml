@@ -1,0 +1,66 @@
+﻿<Window x:Class="WPF_Test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Test"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Title="XX游戏下载器" Height="600" Width="900"
+        WindowStartupLocation="CenterScreen"
+        Icon="Resource/icon.png"
+    >
+    <Grid>
+        <Image x:Name="img_BG" Source="Resource/BG.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="600" Width="900"/>
+
+        <Image x:Name="img_EnterGameAB" Source="Resource/startAB.png" Margin="591,432,181,40" />
+        <Image x:Name="img_EnterGameBB" Source="Resource/startBB.png" Margin="591,432,181,40" />
+        <Image x:Name="img_EnterGameA" Source="Resource/startA.png" Margin="591,432,181,40" />
+        <Image x:Name="img_EnterGameB" Source="Resource/startB.png" Margin="591,432,181,40" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Label x:Name="lab_download" Margin="591,432,181,40" Content="资源&#xD;&#xA;校验" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="White"/>
+        <Button x:Name="btn_EnterGame" Opacity="0" MouseEnter="StartButton_MouseEnter" Click="StartButton_Click" Margin="591,432,181,40" Cursor="Hand"/>
+
+        <Image x:Name="img_close" Source="Resource/btn_close.png" Margin="876,24,0,552" />
+        <Button x:Name="btn_close" Margin="876,24,0,552" Click="btn_close_Click" Opacity="0" RenderTransformOrigin="0.5,1.962"/>
+
+        <Image Source="Resource/LoopBG.png" Margin="30,256,450,31" />
+        <Image x:Name="img_looping" Source="Resource/OnLoopBasic.png" Margin="30,256,450,144"/>
+        <Button x:Name="btn_loop" Margin="30,256,450,144" Opacity="0" Click="btn_loop_Click" MouseEnter="btn_loop_enter" MouseLeave="btn_loop_leave" Cursor="Hand"/>
+
+        <Label x:Name="lab_info1" Margin="30,496,450,80" Content="" Background="#00000000" Foreground="#FFC8C8C8" />
+        <Button x:Name="btn_info1" MouseEnter="btn_info_enter" MouseLeave="btn_info_leave" Margin="30,500,450,80" Opacity="0" Cursor="Hand" Click="btn_info1_Click" />
+        <Label x:Name="lab_info2" Margin="30,516,450,60" Content="" Background="#00000000" Foreground="#FFC8C8C8" />
+        <Button x:Name="btn_info2" MouseEnter="btn_info_enter" MouseLeave="btn_info_leave" Margin="30,520,450,60" Opacity="0" Cursor="Hand" Click="btn_info2_Click" />
+        <Label x:Name="lab_info3" Margin="30,536,450,40" Content="" Background="#00000000" Foreground="#FFC8C8C8" />
+        <Button x:Name="btn_info3" MouseEnter="btn_info_enter" MouseLeave="btn_info_leave" Margin="30,540,450,40" Opacity="0" Cursor="Hand" Click="btn_info3_Click" />
+
+        <Label x:Name="lab_huodong" Margin="40,456,810,109" Content="活动" Background="#00000000" Foreground="#FFC8C8C8" FontSize="20" FontWeight="Bold" />
+        <Button x:Name="btn_huodong" MouseEnter="btn_info_enter" MouseLeave="btn_info_leave" Margin="40,456,810,109" Opacity="0" Cursor="Hand" Click="btn_huodong_Click" />
+        <Button x:Name="WebSelect" Margin="54, 487, 824, 109" Background="#FFBDBD15" BorderBrush="#FFBDBD15" Foreground="#FFBDBD15"/>
+
+        <Label x:Name="lab_gonggao" Margin="100,456,750,109" Content="公告" Background="#00000000" Foreground="#FFC8C8C8" FontSize="20" FontWeight="Bold" />
+        <Button x:Name="btn_gonggao" MouseEnter="btn_info_enter" MouseLeave="btn_info_leave" Margin="100,456,750,109" Opacity="0" Cursor="Hand" Click="btn_gonggao_Click" />
+
+        <Label x:Name="lab_zixvn" Margin="160,456,690,109" Content="咨询" Background="#00000000" Foreground="#FFC8C8C8" FontSize="20" FontWeight="Bold" />
+        <Button x:Name="btn_zixvn" MouseEnter="btn_info_enter" MouseLeave="btn_info_leave" Margin="160,456,690,109" Opacity="0" Cursor="Hand" Click="btn_zixvn_Click" />
+
+        <Image x:Name="img_tureright" Opacity="0" Source="Resource/loopright.png" Margin="400,256,450,144"/>
+        <Image Opacity="0.5" Margin="413,344,463,232" Source="Resource/Turn.png" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Button x:Name="btn_tureright" MouseEnter="btn_loop_enter" MouseLeave="btn_loop_leave" Margin="400,256,450,144" Opacity="0" Cursor="Hand" Click="btn_tureright_Click"/>
+
+        <Image x:Name="img_tureleft" Opacity="0" Source="Resource/loopleft.png" Margin="30,256,820,144"/>
+        <Image Opacity="0.5" Margin="40,344,836,232" Source="Resource/Turn.png" />
+        <Button x:Name="btn_tureleft" MouseEnter="btn_loop_enter" MouseLeave="btn_loop_leave" Margin="30,256,820,144" Opacity="0" Cursor="Hand" Click="btn_tureleft_Click"/>
+    </Grid>
+</Window>
