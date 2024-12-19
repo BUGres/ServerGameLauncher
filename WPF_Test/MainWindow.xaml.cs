@@ -32,7 +32,7 @@ namespace WPF_Test
     public partial class MainWindow : Window
     {
         const string weburi = "http://81.70.22.238:8088"; // 服务器
-        const string gamepath = "game/pvzHE-Launcher.exe"; // 游戏启动路径
+        const string gamepath = "game/martialArt.exe"; // 游戏启动路径
         const string midfilepath = "63d72051e901c069f8aa1b32aa0c43bb"; // 签名前中间文件
 
         class WebUpdate
@@ -584,7 +584,20 @@ namespace WPF_Test
                             List<WebFile> files = new List<WebFile>();
                             foreach (var item in DownloadCheck)
                             {
-                                var strs = item.Key.Split(' ');
+                                // 可能有路径含有空格，这里就得处理一下
+                                var strs_s = item.Key.Split(' ');
+                                string[] strs = new string[4];
+                                
+                                strs[0] = "";
+                                for (int j = 0; j < strs_s.Length - 3; j++)
+                                {
+                                    strs[0] += strs_s[j] + " ";
+                                }
+
+                                strs[0] = strs[0].Substring(0, strs[0].Length - 1);
+                                strs[1] = strs_s[strs_s.Length - 3];
+                                strs[2] = strs_s[strs_s.Length - 2];
+                                strs[3] = strs_s[strs_s.Length - 1];
                                 WebFile f = new WebFile();
                                 f.path = strs[0];
                                 f.length = long.Parse(strs[1]);
