@@ -796,6 +796,9 @@ namespace WPF_Test
                         });
 
                         List<WebFile> newFILES = new List<WebFile>();
+
+                        MessageBox.Show("已经应用了签名");
+
                         // 下载后的资源校验
                         for (int i = 0; i < FILES.Count; i++)
                         {
@@ -808,7 +811,9 @@ namespace WPF_Test
                                 hashpath += md5(paths[stri]) + "\\";
                             }
                             hashpath = hashpath.Substring(0, hashpath.Length - 1);
-                            if (!C_CheckFile(Encoding.Default.GetString(Encoding.Default.GetBytes(hashpath)), Encoding.Default.GetString(Encoding.Default.GetBytes(file.hash))))
+                            // 这里dll里面的函数无法处理超长路径，所以这里必须建立一个近路径的缓存
+                            System.IO.File.WriteAllBytes("hash.dat", System.IO.File.ReadAllBytes(hashpath));
+                            if (!C_CheckFile(Encoding.Default.GetString(Encoding.Default.GetBytes("hash.dat")), Encoding.Default.GetString(Encoding.Default.GetBytes(file.hash))))
                             {
                                 // 下载后解压出来的资源错了，为什么？？？
                                 // 这里理论上不可能运行到
@@ -818,6 +823,9 @@ namespace WPF_Test
                                 {
                                     Directory.Delete(file.path, true);
                                 }
+
+                                // MessageBox.Show("下载文件校验失败？？？为什么？？？\n" + file.path + "\n" + Encoding.Default.GetString(Encoding.Default.GetBytes(hashpath)) + "\n" + Encoding.Default.GetString(Encoding.Default.GetBytes(file.hash)));
+
 #if TEST
                                 MessageBox.Show("下载文件校验失败？？？为什么？？？");
 #endif
