@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         WindowStyle="None"
         AllowsTransparency="True"
+        ResizeMode="NoResize"
         Background="Transparent"
-        Title="XX游戏下载器" Height="600" Width="900"
+        Title="妖仙幻梦启动器" Height="600" Width="900"
         WindowStartupLocation="CenterScreen"
         Icon="Resource/icon.png"
     >
@@ -62,5 +63,6 @@
         <Image x:Name="img_tureleft" Opacity="0" Source="Resource/loopleft.png" Margin="30,256,820,144"/>
         <Image Opacity="0.5" Margin="40,344,836,232" Source="Resource/Turn.png" />
         <Button x:Name="btn_tureleft" MouseEnter="btn_loop_enter" MouseLeave="btn_loop_leave" Margin="30,256,820,144" Opacity="0" Cursor="Hand" Click="btn_tureleft_Click"/>
+        <Rectangle Margin="197,24,24,552" MouseLeftButtonDown="Grid_MouseLeftButtonDown" OpacityMask="White" Fill="#FF202020" />
     </Grid>
 </Window>

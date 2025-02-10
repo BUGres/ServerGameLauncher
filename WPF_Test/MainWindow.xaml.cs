@@ -23,6 +23,8 @@ using System.Runtime.InteropServices;
 using System.CodeDom;
 using System.Security.Cryptography;
 using static System.Net.WebRequestMethods;
+using System.Windows.Shell;
+using System.Windows.Interop;
 
 namespace WPF_Test
 {
@@ -32,7 +34,7 @@ namespace WPF_Test
     public partial class MainWindow : Window
     {
         const string weburi = "http://81.70.22.238:8088"; // 服务器
-        const string gamepath = "game/martialArt.exe"; // 游戏启动路径
+        const string gamepath = "game/YXHM.exe"; // 游戏启动路径
         const string midfilepath = "63d72051e901c069f8aa1b32aa0c43bb"; // 签名前中间文件
 
         class WebUpdate
@@ -343,10 +345,30 @@ namespace WPF_Test
             InitializeComponent();
 
             #region 鼠标拖动
-            this.MouseMove += Draging;
-            this.MouseDown += StartDrag;
-            this.MouseUp += EndDrag;
-            this.MouseLeave += EndDrag;
+            //this.MouseMove += Draging;
+            //this.MouseDown += StartDrag;
+            //this.MouseUp += EndDrag;
+            //this.MouseLeave += EndDrag;
+            // 通过WindowChrome设置标题栏高度
+            //this.SourceInitialized += (object sender, EventArgs e) =>
+            //{
+            //    var hwndSource = PresentationSource.FromVisual(this) as HwndSource;
+            //    if (hwndSource != null)
+            //    {
+            //        hwndSource.AddHook((IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled) => {
+            //            if (msg == 0x00A3) // WM_NCLBUTTONDBLCLK
+            //            {
+            //                handled = true; // 阻止双击最大化
+            //            }
+            //            return IntPtr.Zero;
+            //        });
+            //    }
+            //};
+            //WindowChrome.SetWindowChrome(this, new WindowChrome() 
+            //{
+            //    CaptionHeight = 50,
+            //});
+            // 终于找到了完美的解决办法 看函数 Grid_MouseLeftButtonDown
             #endregion
             #region 从网络上更新所有资源
 
@@ -903,41 +925,34 @@ namespace WPF_Test
 
         }
 
-        private bool _isDragging = false;
-        private Point _clickPosition;
+        //private bool _isDragging = false;
+        //private Point _clickPosition;
 
-        private void StartDrag(object sender, MouseEventArgs e)
+        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            // 鼠标左键按下时，开始拖动
-            // MessageBox.Show(e.GetPosition(this).X + " " + e.GetPosition(this).Y);
-            if (e.GetPosition(this).Y <= 24 + 24)
-            { 
-                _isDragging = true;
-                _clickPosition = e.GetPosition(this);
-            }
-            
+            this.DragMove();
         }
 
-        private void EndDrag(object sender, MouseEventArgs e)
-        {
-            // 鼠标左键释放时，停止拖动
-            _isDragging = false;
-        }
+        //private void EndDrag(object sender, MouseEventArgs e)
+        //{
+        //    // 鼠标左键释放时，停止拖动
+        //    _isDragging = false;
+        //}
 
-        private void Draging(object sender, MouseEventArgs e)
-        {
-            if (_isDragging)
-            {
-                // 计算新的窗口位置并更新窗口位置
-                Point currentPosition = e.GetPosition(this);
-                double offsetX = currentPosition.X - _clickPosition.X;
-                double offsetY = currentPosition.Y - _clickPosition.Y;
+        //private void Draging(object sender, MouseEventArgs e)
+        //{
+        //    if (_isDragging)
+        //    {
+        //        // 计算新的窗口位置并更新窗口位置
+        //        Point currentPosition = e.GetPosition(this);
+        //        double offsetX = currentPosition.X - _clickPosition.X;
+        //        double offsetY = currentPosition.Y - _clickPosition.Y;
 
-                // 更新窗口位置
-                this.Left += offsetX;
-                this.Top += offsetY;
-            }
-        }
+        //        // 更新窗口位置
+        //        this.Left += offsetX;
+        //        this.Top += offsetY;
+        //    }
+        //}
 
         private void StartButton_MouseEnter(object sender, MouseEventArgs e)
         {

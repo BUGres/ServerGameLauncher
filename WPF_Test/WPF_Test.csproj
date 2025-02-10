@@ -7,6 +7,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resource\icon.ico</ApplicationIcon>
+    <AssemblyName>YaoXianHuanMengLauncher</AssemblyName>
+    <RootNamespace>YaoXianHuanMengLauncher</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -86,6 +88,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="7z.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="7z.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
