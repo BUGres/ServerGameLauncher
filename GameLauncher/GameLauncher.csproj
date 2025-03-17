@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resource\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resource\BG.png" />
+    <None Remove="Resource\btnEnter.png" />
+    <None Remove="Resource\btnEnterB.png" />
+    <None Remove="Resource\btn_close.png" />
+    <None Remove="Resource\btn_ie.png" />
+    <None Remove="Resource\btn_minsize.png" />
+    <None Remove="Resource\btn_QQ.png" />
+    <None Remove="Resource\btn_StartButton.png" />
+    <None Remove="Resource\btn_WeChat.png" />
+    <None Remove="Resource\icon.ico" />
+    <None Remove="Resource\icon.png" />
+    <None Remove="Resource\LoopBG.png" />
+    <None Remove="Resource\loopleft.png" />
+    <None Remove="Resource\loopright.png" />
+    <None Remove="Resource\OnLoopBasic.png" />
+    <None Remove="Resource\startA.png" />
+    <None Remove="Resource\startAB.png" />
+    <None Remove="Resource\startB.png" />
+    <None Remove="Resource\startBB.png" />
+    <None Remove="Resource\Turn.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resource\icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resource\BG.png" />
+    <Resource Include="Resource\btnEnter.png" />
+    <Resource Include="Resource\btnEnterB.png" />
+    <Resource Include="Resource\btn_close.png" />
+    <Resource Include="Resource\btn_minsize.png" />
+    <Resource Include="Resource\icon.ico" />
+    <Resource Include="Resource\icon.png" />
+    <Resource Include="Resource\LoopBG.png" />
+    <Resource Include="Resource\loopleft.png" />
+    <Resource Include="Resource\loopright.png" />
+    <Resource Include="Resource\OnLoopBasic.png" />
+    <Resource Include="Resource\Turn.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="7z.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="7z.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="FileBuild.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
